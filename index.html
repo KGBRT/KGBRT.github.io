@@ -9,6 +9,7 @@
             --ana-kirmizi: #d32f2f;
             --ana-sari: #ffeb3b;
             --yt-kirmizi: #ff0000;
+            --dc-renk: #5865F2; /* Discord Blurple */
             --arka-plan: #121212;
             --yazi-rengi: #ffffff;
         }
@@ -71,41 +72,34 @@
         }
 
         .btn-group {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
-            flex-wrap: wrap;
             margin-top: 20px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 15px;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 8px;
             font-weight: bold;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: center;
-            min-width: 160px;
         }
 
-        .btn-tg {
-            background-color: var(--ana-sari);
-            color: #000;
-            box-shadow: 0 4px 15px rgba(255, 235, 59, 0.2);
-        }
-
-        .btn-yt {
-            background-color: var(--yt-kirmizi);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
-        }
+        .btn-tg { background-color: #0088cc; color: #fff; }
+        .btn-yt { background-color: var(--yt-kirmizi); color: #fff; }
+        .btn-dc { background-color: var(--dc-renk); color: #fff; }
 
         .btn:hover {
             transform: scale(1.05);
-            filter: brightness(1.1);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.1);
+            filter: brightness(1.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         footer {
@@ -140,25 +134,22 @@
         <p><strong>Özgürlük</strong> grubun temelini oluşturur. Biz kişisel trolleri denetlemeyiz; her troll eyleminden kişinin kendisi sorumludur.</p>
     </section>
 
-    <section id="iletisim">
-        <h2>Bağlantılar ve İletişim</h2>
-        <p>Operasyonlarımızı takip etmek veya ittifaka katılmak için:</p>
+    <section id="baglantilar">
+        <h2>Operasyon Merkezleri</h2>
+        <p>Aramıza katılmak veya faaliyetleri takip etmek için resmi kanallarımız:</p>
         
         <div class="btn-group">
-            <a href="https://youtube.com/@kgb-rt?si=YC7WRbnH1Be-QN0Q" target="_blank" class="btn btn-yt">YouTube Kanalı</a>
-            <a href="https://t.me/KGBRT_RESMI" target="_blank" class="btn btn-tg">Telegram Grubu</a>
+            <a href="https://discord.gg/SQT3MGEU5E" target="_blank" class="btn btn-dc">KGB-RT OFİS (DC)</a>
+            <a href="https://discord.gg/Vkb3qrbUjG" target="_blank" class="btn btn-dc" style="background-color: #404EED;">KGB-RT ARŞİV (DC)</a>
+            <a href="https://youtube.com/@kgb-rt?si=YC7WRbnH1Be-QN0Q" target="_blank" class="btn btn-yt">YOUTUBE</a>
+            <a href="https://t.me/KGBRT_RESMI" target="_blank" class="btn btn-tg">TELEGRAM</a>
         </div>
-
-        <p style="margin-top: 25px; font-size: 0.85rem; color: #888;">
-            E-posta: yakında eklenecektir.<br>
-            <em>*Resmi duyurular için YouTube kanalını takip edin.</em>
-        </p>
     </section>
 </div>
 
 <footer>
     &copy; 2026 KGB-RT - Troll İttifakı Kurucu Grubu. <br>
-    "Eğlence ve Kaosun Adresi."
+    "Kaosun ve Eğlencenin Tek Adresi."
 </footer>
 
 </body>
