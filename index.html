@@ -9,7 +9,7 @@
             --ana-kirmizi: #d32f2f;
             --ana-sari: #ffeb3b;
             --yt-kirmizi: #ff0000;
-            --dc-renk: #5865F2; /* Discord Blurple */
+            --dc-renk: #5865F2;
             --arka-plan: #121212;
             --yazi-rengi: #ffffff;
         }
@@ -39,6 +39,12 @@
             animation: glow 2s ease-in-out infinite alternate;
         }
 
+        .orak-ikon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
         @keyframes glow {
             from { text-shadow: 0 0 5px var(--ana-sari), 0 0 10px var(--ana-sari); }
             to { text-shadow: 0 0 20px #fff, 0 0 30px var(--ana-sari); }
@@ -59,11 +65,6 @@
             transition: transform 0.3s ease;
         }
 
-        section:hover {
-            transform: translateY(-5px);
-            background: #252525;
-        }
-
         h2 {
             color: var(--ana-sari);
             border-bottom: 1px solid #333;
@@ -72,8 +73,9 @@
         }
 
         .btn-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 15px;
             margin-top: 20px;
         }
@@ -82,14 +84,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 15px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            font-size: 0.85rem;
-            text-align: center;
+            font-size: 0.9rem;
         }
 
         .btn-tg { background-color: #0088cc; color: #fff; }
@@ -99,7 +100,6 @@
         .btn:hover {
             transform: scale(1.05);
             filter: brightness(1.2);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         footer {
@@ -123,6 +123,7 @@
 <body>
 
 <header>
+    <span class="orak-ikon">☭</span>
     <h1>KGB-RT</h1>
     <p>TROLL İTTİFAKI <span style="color:white;">|</span> KURUCU GRUP</p>
 </header>
@@ -135,12 +136,11 @@
     </section>
 
     <section id="baglantilar">
-        <h2>Operasyon Merkezleri</h2>
-        <p>Aramıza katılmak veya faaliyetleri takip etmek için resmi kanallarımız:</p>
+        <h2>Operasyon Merkezi</h2>
+        <p>Aramıza katılmak ve faaliyetleri takip etmek için resmi kanallarımız:</p>
         
         <div class="btn-group">
-            <a href="https://discord.gg/SQT3MGEU5E" target="_blank" class="btn btn-dc">KGB-RT OFİS (DC)</a>
-            <a href="https://discord.gg/Vkb3qrbUjG" target="_blank" class="btn btn-dc" style="background-color: #404EED;">KGB-RT ARŞİV (DC)</a>
+            <a href="https://discord.gg/d6pbDJtG54" target="_blank" class="btn btn-dc">DİSCORD</a>
             <a href="https://youtube.com/@kgb-rt?si=YC7WRbnH1Be-QN0Q" target="_blank" class="btn btn-yt">YOUTUBE</a>
             <a href="https://t.me/KGBRT_RESMI" target="_blank" class="btn btn-tg">TELEGRAM</a>
         </div>
