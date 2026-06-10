@@ -1,160 +1,669 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>KGB-RT | Resmi Web Sitesi (kgbrt)</title>
-    <meta name="description" content="KGB-RT (kgbrt) resmi web sitesi. Roleplay oyunlarında troll yapan, özgürlüğü temel alan eğlence ve troll ittifakı kurucu grubu.">
-    <meta name="keywords" content="kgb-rt, kgbrt, kgb rt, troll ittifakı, roleplay troll">
-    <meta name="robots" content="index, follow">
-    <style>
-        :root {
-            --ana-kirmizi: #d32f2f;
-            --ana-sari: #ffeb3b;
-            --yt-kirmizi: #ff0000;
-            --dc-renk: #5865F2;
-            --arka-plan: #121212;
-            --yazi-rengi: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KGB-RT | Troll İttifakı — Kurucu Grup</title>
+<meta name="description" content="KGB-RT (kgbrt) resmi web sitesi. Roleplay oyunlarında troll yapan, özgürlüğü temel alan eğlence ve troll ittifakı kurucu grubu.">
+<meta name="keywords" content="kgb-rt, kgbrt, kgb rt, troll ittifakı, roleplay troll">
+<meta name="robots" content="index, follow">
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: var(--arka-plan);
-            color: var(--yazi-rengi);
-            line-height: 1.6;
-        }
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap');
 
-        header {
-            background-color: var(--ana-kirmizi);
-            color: var(--ana-sari);
-            padding: 3rem 1rem;
-            text-align: center;
-            border-bottom: 5px solid var(--ana-sari);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
+  :root {
+    --kirmizi: #c0392b;
+    --kirmizi-koyu: #922b21;
+    --kirmizi-acik: #e74c3c;
+    --sari: #f1c40f;
+    --sari-koyu: #d4ac0d;
+    --arka: #0e0e0e;
+    --kart: #1a1a1a;
+    --kart2: #222222;
+    --sinir: #2e2e2e;
+    --yazi: #f0ece0;
+    --yazi-soluk: #9a9080;
+    --dc: #5865F2;
+    --yt: #FF0000;
+    --tg: #229ED9;
+  }
 
-        header h1 {
-            margin: 0;
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .orak-ikon {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 10px;
-        }
+  html { scroll-behavior: smooth; }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 5px var(--ana-sari), 0 0 10px var(--ana-sari); }
-            to { text-shadow: 0 0 20px #fff, 0 0 30px var(--ana-sari); }
-        }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: var(--arka);
+    color: var(--yazi);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
 
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+  /* ── GRAİN TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
 
-        section {
-            background: #1e1e1e;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border-left: 6px solid var(--ana-sari);
-            transition: transform 0.3s ease;
-        }
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    background: var(--kirmizi-koyu);
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 3px solid var(--sari);
+  }
 
-        h2 {
-            color: var(--ana-sari);
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
+  .header-stripes {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(0,0,0,0.12) 18px,
+      rgba(0,0,0,0.12) 36px
+    );
+    pointer-events: none;
+  }
 
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
+  .header-inner {
+    position: relative;
+    padding: 3.5rem 1rem 3rem;
+    z-index: 1;
+  }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
+  .star-emblem {
+    display: inline-block;
+    font-size: 2.8rem;
+    color: var(--sari);
+    margin-bottom: 0.4rem;
+    animation: spin-slow 18s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(241,196,15,0.4));
+  }
 
-        .btn-tg { background-color: #0088cc; color: #fff; }
-        .btn-yt { background-color: var(--yt-kirmizi); color: #fff; }
-        .btn-dc { background-color: var(--dc-renk); color: #fff; }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
 
-        .btn:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
-        }
+  header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    letter-spacing: 0.18em;
+    color: var(--sari);
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.4);
+  }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.8rem;
-            color: #666;
-            border-top: 1px solid #222;
-        }
+  .header-sub {
+    margin-top: 0.6rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    color: rgba(240,236,224,0.75);
+    text-transform: uppercase;
+  }
 
-        .badge {
-            background: var(--ana-kirmizi);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-    </style>
+  .header-divider {
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background: var(--sari);
+    margin: 1.2rem 0 0;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--sari);
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .ticker-label {
+    display: inline-block;
+    background: var(--kirmizi);
+    color: var(--sari);
+    padding: 0 14px;
+    margin-right: 12px;
+    font-weight: 700;
+  }
+
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 28s linear infinite;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14,14,14,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--sinir);
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 0;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.85rem 1.2rem;
+    color: var(--yazi-soluk);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav ul li a:hover {
+    color: var(--sari);
+    border-bottom-color: var(--sari);
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--kirmizi-acik);
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--yazi);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--sinir);
+  }
+
+  h2 .accent {
+    color: var(--sari);
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--kart);
+    border: 1px solid var(--sinir);
+    border-radius: 6px;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  /* ── STAT CARDS ── */
+  .stat-card {
+    background: var(--kart2);
+    border: 1px solid var(--sinir);
+    border-radius: 6px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--sari);
+    line-height: 1;
+    display: block;
+    counter-increment: none;
+  }
+
+  .stat-num[data-count] {
+    animation: count-up 1.4s ease-out forwards;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--yazi-soluk);
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  /* ── MANIFESTO LIST ── */
+  .manifesto-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .manifesto-list li {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    color: rgba(240,236,224,0.85);
+  }
+
+  .manifesto-list li::before {
+    content: '☭';
+    color: var(--kirmizi-acik);
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── KURALLAR / İLKELER ── */
+  .kural-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+  }
+
+  .kural-item {
+    background: var(--kart2);
+    border: 1px solid var(--sinir);
+    border-left: 3px solid var(--kirmizi);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+  }
+
+  .kural-item h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sari);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .kural-item p {
+    font-size: 0.88rem;
+    color: rgba(240,236,224,0.7);
+    line-height: 1.5;
+  }
+
+  /* ── OPERASYON PLATFORMLARI ── */
+  .platform-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .platform-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--kart2);
+    border: 1px solid var(--sinir);
+    border-radius: 6px;
+    padding: 1rem 1.3rem;
+    text-decoration: none;
+    color: var(--yazi);
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .platform-row:hover {
+    border-color: var(--yazi-soluk);
+    background: #2a2a2a;
+  }
+
+  .platform-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    font-weight: bold;
+  }
+
+  .platform-icon.dc { background: var(--dc); color: #fff; }
+  .platform-icon.yt { background: var(--yt); color: #fff; }
+  .platform-icon.tg { background: var(--tg); color: #fff; }
+
+  .platform-info { flex: 1; }
+  .platform-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  .platform-desc {
+    font-size: 0.8rem;
+    color: var(--yazi-soluk);
+    margin-top: 1px;
+  }
+
+  .platform-arrow {
+    color: var(--yazi-soluk);
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+  }
+
+  .platform-row:hover .platform-arrow { transform: translateX(4px); }
+
+  /* ── ROLEPLAY BADGE ── */
+  .badge {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--kirmizi);
+    color: var(--sari);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ── SORUMLULUK BEYANI ── */
+  .uyari-box {
+    background: rgba(192,57,43,0.12);
+    border: 1px solid rgba(192,57,43,0.35);
+    border-left: 3px solid var(--kirmizi);
+    border-radius: 4px;
+    padding: 1rem 1.3rem;
+    font-size: 0.88rem;
+    color: rgba(240,236,224,0.72);
+  }
+
+  .uyari-box strong {
+    color: var(--kirmizi-acik);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080808;
+    border-top: 1px solid var(--sinir);
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .footer-emblem {
+    font-size: 1.8rem;
+    color: var(--kirmizi);
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    color: #444;
+    line-height: 1.8;
+  }
+
+  footer .slogan {
+    color: #5a5040;
+    font-style: italic;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 520px) {
+    nav ul { gap: 0; }
+    nav ul li a { padding: 0.75rem 0.6rem; font-size: 0.73rem; letter-spacing: 0.06em; }
+    .stat-num { font-size: 1.9rem; }
+    header h1 { font-size: 2.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .star-emblem, .ticker-inner { animation: none; }
+  }
+</style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-    <span class="orak-ikon">☭</span>
+  <div class="header-stripes"></div>
+  <div class="header-inner">
+    <span class="star-emblem">☭</span>
     <h1>KGB-RT</h1>
-    <p>TROLL İTTİFAKI <span style="color:white;">|</span> KURUCU GRUP</p>
+    <p class="header-sub">Troll İttifakı &nbsp;·&nbsp; Kurucu Grup &nbsp;·&nbsp; Kuruluş 2024</p>
+    <span class="header-divider"></span>
+  </div>
 </header>
 
-<div class="container">
-    <section id="hakkimizda">
-        <h2>KGB-RT Nedir? <span class="badge">ROLEPLAY</span></h2>
-        <p>KGB-RT, gerçek bir kurum değildir. Roleplay oyunlarında troll yapar ve karşı ordu sayılabilir. İnsanları eğlendirmek ve roleplay dünyasını kendine has bir düzene oturtmak amacıyla kurulmuş bir oluşumdur.</p>
-        <p><strong>Özgürlük</strong> grubun temelini oluşturur. Biz kişisel trolleri denetlemeyiz; her troll eyleminden kişinin kendisi sorumludur.</p>
-    </section>
-
-    <section id="baglantilar">
-        <h2>Operasyon Merkezi</h2>
-        <p>Aramıza katılmak ve faaliyetleri takip etmek için resmi kanallarımız:</p>
-         
-        <div class="btn-group">
-            <a href="https://discord.gg/d6pbDJtG54" target="_blank" class="btn btn-dc">DİSCORD</a>
-            <a href="https://youtube.com/@kgb-rt?si=YC7WRbnH1Be-QN0Q" target="_blank" class="btn btn-yt">YOUTUBE</a>
-            <a href="https://t.me/KGBRT_RESMI" target="_blank" class="btn btn-tg">TELEGRAM</a>
-        </div>
-    </section>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <span class="ticker-label">DUYURU</span>
+  <span class="ticker-inner">
+    ☭ Discord kanalımız aktif &nbsp;|&nbsp; ☭ Yeni üyeler aramıza katılıyor &nbsp;|&nbsp; ☭ Tüm eylemlerden kişinin kendisi sorumludur &nbsp;|&nbsp; ☭ Özgürlük grubun temelidir &nbsp;|&nbsp; ☭ Kaosun ve eğlencenin tek adresi &nbsp;|&nbsp;
+    ☭ Discord kanalımız aktif &nbsp;|&nbsp; ☭ Yeni üyeler aramıza katılıyor &nbsp;|&nbsp; ☭ Tüm eylemlerden kişinin kendisi sorumludur &nbsp;|&nbsp; ☭ Özgürlük grubun temelidir &nbsp;|&nbsp; ☭ Kaosun ve eğlencenin tek adresi &nbsp;|&nbsp;
+  </span>
 </div>
 
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#hakkimizda">Hakkımızda</a></li>
+    <li><a href="#ilkeler">İlkeler</a></li>
+    <li><a href="#istatistik">Durum</a></li>
+    <li><a href="#kanallar">Kanallar</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- HAKKIMIZDA -->
+  <section id="hakkimizda">
+    <p class="section-label">Kimiz</p>
+    <h2>KGB-RT Nedir? <span class="badge">Roleplay</span></h2>
+    <div class="card">
+      <ul class="manifesto-list">
+        <li>KGB-RT gerçek bir kurum değildir. Roleplay oyunlarında aktif olan, karşı ordu niteliği taşıyan bir oluşumdur.</li>
+        <li>İnsanları eğlendirmek ve roleplay dünyasını kendine has bir düzene oturtmak amacıyla kurulmuştur.</li>
+        <li>Özgürlük grubun temelini oluşturur. Kişisel trolleri denetlemeyiz; her eylemden kişinin kendisi sorumludur.</li>
+        <li>Bağımsız üyeler ağımızda bulunur. Herkese eşit muamele, kimseye zorunluluk yoktur.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- İLKELER -->
+  <section id="ilkeler">
+    <p class="section-label">Temel Değerler</p>
+    <h2>Grup <span class="accent">İlkeleri</span></h2>
+    <div class="kural-grid">
+      <div class="kural-item">
+        <h3>Özgürlük</h3>
+        <p>Hiç kimse grup adına hareket etmeye zorlanamaz. Her üye kendi kararını verir.</p>
+      </div>
+      <div class="kural-item">
+        <h3>Sorumluluk</h3>
+        <p>Yapılan her troll eyleminin sorumluluğu eylemi gerçekleştiren kişiye aittir.</p>
+      </div>
+      <div class="kural-item">
+        <h3>Eğlence</h3>
+        <p>Hedef eğlenceli ve yaratıcı içerik üretmektir. Zarar vermek amaç değildir.</p>
+      </div>
+      <div class="kural-item">
+        <h3>Kimlik</h3>
+        <p>Bu bir roleplay oluşumudur. Gerçek kurumlarla hiçbir bağlantısı yoktur.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <div class="uyari-box">
+        <strong>Sorumluluk Reddi:</strong> KGB-RT, gerçek bir siyasi, askeri veya istihbarat kuruluşu değildir. Tüm faaliyetler roleplay ve eğlence amaçlıdır. Grup adına gerçekleştirilen eylemler bireysel sorumluluktadır.
+      </div>
+    </div>
+  </section>
+
+  <!-- İSTATİSTİK / DURUM -->
+  <section id="istatistik">
+    <p class="section-label">Anlık Durum</p>
+    <h2>Grup <span class="accent">Durumu</span></h2>
+    <div class="card-grid">
+      <div class="stat-card">
+        <span class="stat-num" id="cnt-uye">—</span>
+        <span class="stat-label">Aktif Üye</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="cnt-platform">3</span>
+        <span class="stat-label">Platform</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="cnt-sure">2</span>
+        <span class="stat-label">Yıldır Aktif</span>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--yazi-soluk);margin-top:0.8rem;">
+      Gerçek zamanlı üye sayısı için Discord sunucusuna katılın.
+    </p>
+  </section>
+
+  <!-- KANALLAR -->
+  <section id="kanallar">
+    <p class="section-label">Operasyon Merkezi</p>
+    <h2>Resmi <span class="accent">Kanallar</span></h2>
+    <div class="platform-list">
+
+      <a href="https://discord.gg/d6pbDJtG54" target="_blank" rel="noopener" class="platform-row">
+        <div class="platform-icon dc">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.132 18.11a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        </div>
+        <div class="platform-info">
+          <div class="platform-name">Discord</div>
+          <div class="platform-desc">Ana operasyon merkezi — canlı iletişim</div>
+        </div>
+        <span class="platform-arrow">→</span>
+      </a>
+
+      <a href="https://youtube.com/@kgb-rt?si=YC7WRbnH1Be-QN0Q" target="_blank" rel="noopener" class="platform-row">
+        <div class="platform-icon yt">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div class="platform-info">
+          <div class="platform-name">YouTube</div>
+          <div class="platform-desc">Video arşivi ve operasyon kayıtları</div>
+        </div>
+        <span class="platform-arrow">→</span>
+      </a>
+
+      <a href="https://t.me/KGBRT_RESMI" target="_blank" rel="noopener" class="platform-row">
+        <div class="platform-icon tg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="platform-info">
+          <div class="platform-name">Telegram</div>
+          <div class="platform-desc">Resmi duyuru kanalı</div>
+        </div>
+        <span class="platform-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
-    &copy; 2026 KGB-RT - Troll İttifakı Kurucu Grubu. <br>
-    "Kaosun ve Eğlencenin Tek Adresi."
+  <span class="footer-emblem">☭</span>
+  <p>© 2026 KGB-RT — Troll İttifakı Kurucu Grubu</p>
+  <p class="slogan">"Kaosun ve Eğlencenin Tek Adresi."</p>
+  <p style="margin-top:0.7rem;font-size:0.72rem;color:#333;">
+    Bu site roleplay amaçlıdır. Gerçek bir kurum veya örgütle hiçbir bağlantısı yoktur.
+  </p>
 </footer>
 
+<script>
+  // Animated counter
+  function animateCounter(el, target, duration) {
+    const start = performance.now();
+    const update = (ts) => {
+      const progress = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  }
+
+  // Observer to trigger count on scroll into view
+  const statsSection = document.getElementById('istatistik');
+  let counted = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !counted) {
+      counted = true;
+      animateCounter(document.getElementById('cnt-platform'), 3, 900);
+      animateCounter(document.getElementById('cnt-sure'), 2, 900);
+      document.getElementById('cnt-uye').textContent = '?';
+    }
+  }, { threshold: 0.3 });
+
+  if (statsSection) observer.observe(statsSection);
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = '';
+      a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--sari)';
+        a.style.borderBottomColor = 'var(--sari)';
+      }
+    });
+  }, { passive: true });
+</script>
 </body>
 </html>
